@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LPC LEARNHUB - MASTER SETTINGS FINAL</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--l-color:red;--box-acc:#FFF8DC;--box-bus:#FFF8DC;--box-eco:#FFF8DC;--box-eng:#E8F5E9;--box-accExam:#FFF3E0;--box-excel:#F3E5F5;--login-bg1:#FFFEF8;--login-bg2:#FFF8DC}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#FFFCF2}
+.l-red{color:var(--l-color)!important;font-weight:900}
+#loginPage{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(1200px 600px at 20% 0%,#FFF3B0 0%,transparent 60%),linear-gradient(135deg,var(--login-bg1),var(--login-bg2))}
+.login-wrap{display:flex;gap:30px;max-width:1050px;width:100%;align-items:center;flex-wrap:wrap;justify-content:center}
+.about-card{background:linear-gradient(135deg,#111,#222);color:#fff;border-radius:24px;padding:28px;max-width:430px;flex:1;min-width:320px;border:2px solid #C9A227}
+.about-card h1{font-size:38px;font-weight:900;line-height:1} .about-card h1 .l-letter{color:var(--l-color)}
+.box{background:rgba(255,255,255,.96);width:100%;max-width:460px;border-radius:24px;padding:30px;box-shadow:0 30px 80px rgba(201,162,39,.25);border:2px solid #F5E7B8;text-align:center;position:relative;overflow:hidden}
+.box::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--l-color),#F1D27A)}
+.logo{font-weight:900;font-size:30px} .logo .l-letter{color:var(--l-color)}
+.badge{display:inline-block;background:#111;color:#F1D27A;font-size:9px;padding:8px 16px;border-radius:30px;margin:10px 0;font-weight:800}
+.tabs{display:flex;gap:10px;margin:18px 0;background:#FFF8DC;padding:6px;border-radius:14px} .tabs button{flex:1;padding:12px;border-radius:10px;border:none;background:transparent;font-weight:700;cursor:pointer} .tabs button.active{background:#111;color:#fff}
+input,select,textarea{width:100%;padding:13px;border:2px solid #E9D9A0;border-radius:12px;margin:7px 0;outline:none;font-size:13px;background:#FFFEF7} textarea{min-height:70px}
+.btn{border:none;padding:13px;border-radius:12px;font-weight:800;cursor:pointer;width:100%;margin-top:10px} .btn-gold{background:linear-gradient(135deg,#C9A227,#F1D27A);color:#111} .btn-dark{background:#111;color:#fff} .btn-red{background:var(--l-color);color:#fff}
+.hidden{display:none!important}
+.phone-flex{display:flex;gap:8px} .phone-flex span{background:#FFF8DC;padding:13px 14px;border-radius:12px;font-weight:700;border:2px solid #E9D9A0}
+.otp-show{background:#E8F5E9;border:2px solid #2E7D32;border-radius:14px;padding:14px;margin:12px 0}
+.otp6{display:flex;gap:8px;justify-content:center;margin:14px 0} .otp6 input{width:50px!important;height:56px;text-align:center;font-size:22px;font-weight:800;border:2px solid #C9A227;border-radius:12px}
+#mainPage{display:none;min-height:100vh}
+#welcomeSplash{display:none;min-height:100vh;align-items:center;justify-content:center;background:linear-gradient(135deg,#111,#222);color:#fff;text-align:center;padding:20px}
+header{background:rgba(255,255,255,.9);backdrop-filter:blur(12px);padding:14px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.06);position:sticky;top:0;z-index:10}
+.wrap{max-width:1220px;margin:auto;padding:20px 5%}
+.welcome{background:linear-gradient(135deg,#fff,#FFF8DC);border:2px solid #C9A227;border-radius:16px;padding:16px;text-align:center;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px} @media(min-width:768px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{border:2px solid #C9A227;border-radius:16px;padding:18px;text-align:center;cursor:pointer;min-height:115px;transition:.3s} .card:hover{transform:translateY(-4px);box-shadow:0 12px 25px rgba(0,0,0,.15)}
+.card.dark{background:linear-gradient(135deg,#111,#333);color:#fff;border-color:#111} .card.blue{background:linear-gradient(135deg,#0F2A3C,#1976D2);color:#fff;border-color:#0D47A1}
+.section{display:none;background:#fff;border:2px solid #F5E7B8;border-radius:16px;padding:18px;margin-top:16px} .section.active{display:block}
+.admin-box{background:#FFF9E6;border:2px dashed #C9A227;border-radius:14px;padding:16px;margin:12px 0;text-align:left}
+.content-card{background:#fff;border:2px solid #C9A227;border-radius:14px;padding:14px;margin:10px 0;text-align:left}
+.file-input{border:2px dashed #0D47A1!important;background:#E3F2FD}
+.inner-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.inner-box{background:linear-gradient(135deg,#E3F2FD,#BBDEFB);border:2px solid #0D47A1;border-radius:14px;padding:22px;text-align:center;cursor:pointer;font-weight:700}
+.quiz-container{background:#FFFEF7;border:2px solid #C9A227;border-radius:16px;padding:20px;margin:12px 0}
+.quiz-progress{height:8px;background:#E9D9A0;border-radius:10px;overflow:hidden;margin-bottom:14px} .quiz-progress-bar{height:100%;background:linear-gradient(90deg,var(--l-color),#F1D27A);transition:.3s}
+.quiz-options{display:grid;gap:10px} .quiz-options label{background:#fff;border:2px solid #E9D9A0;border-radius:12px;padding:14px;display:flex;gap:12px;align-items:center;cursor:pointer}
+.quiz-options label.sel{border-color:var(--l-color);background:#FFF9E6}
+.color-row{display:flex;gap:8px;align-items:center;margin:8px 0} .color-row input[type="color"]{width:50px!important;height:40px;padding:2px;border-radius:8px}
+.suggestion-card{background:#FFF3E0;border:2px solid #E65100;border-radius:12px;padding:12px;margin:8px 0}
+.logo-img{width:50px;height:50px;border-radius:12px;object-fit:cover;border:2px solid #C9A227}
+.cert{border:4px double #C9A227;padding:24px;text-align:center;border-radius:18px;max-width:700px;margin:auto;background:#fff}
+</style>
+</head>
+<body>
+
+<div id="loginPage">
+<div class="login-wrap">
+<div class="about-card" id="aboutCard">
+<h1 id="aboutTitle"><span class="l-letter">L</span>PC<br><span style="color:#F1D27A">LEARNHUB</span></h1>
+<div class="badge" id="aboutBadge">COMMERCE EXCELLENCE</div>
+<div class="about-lines" id="aboutLines">
+<p>Empowering commerce students with smart learning, real-world concepts, and exam-focused preparation for a brighter future.</p>
+<p>We transform complex Accountancy, Business Studies, and Economics into simple, understandable, and scoring subjects.</p>
+<p>Your success is our mission — learn, practice, and achieve excellence with LPC, presented by Lakki Pilwan.</p>
+</div>
+</div>
+<div class="box">
+<div class="logo" id="loginLogo"><span class="l-letter">L</span>PC <span style="color:#C9A227">LEARNHUB</span></div>
+<div class="badge" id="loginBadge">✨ MASTER SETTINGS FINAL - L RED</div>
+<div class="tabs"><button id="bS" class="active" onclick="tab('S')">Student</button><button id="bA" onclick="tab('A')">Admin</button></div>
+<div id="sTab">
+<div id="s1"><div class="phone-flex"><span>+91</span><input id="phone" type="tel" maxlength="10" placeholder="Mobile" oninput="this.value=this.value.replace(/\D/g,'')"></div><button class="btn btn-gold" onclick="sendOTP()">Send OTP</button></div>
+<div id="s2" class="hidden"><div class="otp-show"><p style="font-size:12px;font-weight:700">OTP for +91 <span id="pShow"></span></p><h2 id="oShow" style="letter-spacing:6px;font-weight:900"></h2></div><div class="otp6"><input id="o1" maxlength="1" oninput="jmp(this,'o2')"><input id="o2" maxlength="1" oninput="jmp(this,'o3')"><input id="o3" maxlength="1" oninput="jmp(this,'o4')"><input id="o4" maxlength="1" oninput="jmp(this,'o5')"><input id="o5" maxlength="1" oninput="jmp(this,'o6')"><input id="o6" maxlength="1"></div><button class="btn btn-dark" onclick="verify()">Verify</button><button class="btn" style="background:#fff;border:1px solid #ddd" onclick="resetLogin()">Back</button></div>
+<div id="s3" class="hidden"><p style="font-size:12px;color:green;font-weight:700">✓ Verified: +91 <span id="vPh"></span></p><input id="sName" placeholder="Full Name"><select id="sClass"><option value="">Select Class</option><option value="11">CLASS 11</option><option value="12">CLASS 12</option></select><button class="btn btn-gold" onclick="enterFinal()">Enter</button></div>
+</div>
+<div id="aTab" class="hidden">
+<div id="a1"><input id="aNew" type="password" placeholder="Create Admin Password"><input id="aCon" type="password" placeholder="Confirm"><button class="btn btn-gold" onclick="aCreate()">Create & Enter</button></div>
+<div id="a2" class="hidden"><input id="aPass" type="password" placeholder="Admin Password"><button class="btn btn-dark" onclick="aLogin()">Login as Admin</button>
+<div class="admin-box" style="border-color:#111;background:#fff"><p style="font-weight:800">🔑 Change Password</p><input id="aN2" type="password" placeholder="New"><input id="aC2" type="password" placeholder="Confirm"><button class="btn btn-gold" onclick="changeP()">Change</button></div></div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="welcomeSplash">
+<div>
+<h1 style="font-size:55px;font-weight:900;line-height:1"><span class="l-letter" style="color:var(--l-color)">L</span>PC<br><span style="color:#F1D27A">LearnHub</span></h1>
+<p style="margin-top:12px;color:#ccc" id="splashClass">Welcome</p>
+<button class="btn btn-gold" style="width:auto;padding:10px 30px;margin-top:20px" onclick="goToSubjects()">Continue to Subjects →</button>
+</div>
+</div>
+
+<div id="mainPage">
+<header>
+<div style="display:flex;gap:10px;align-items:center"><img id="headerLogo" src="" class="logo-img hidden"><div class="logo"><span class="l-letter">L</span>PC <span style="color:#C9A227">LEARNHUB</span></div></div>
+<div style="display:flex;gap:6px;align-items:center"><span id="uName" style="font-size:11px;font-weight:700"></span><button id="masterSettingBtn" class="btn btn-red hidden" style="width:auto;padding:8px 14px;font-size:11px" onclick="openSub('masterSettings')">⚙️ MAIN SETTINGS</button><button id="adminBoxBtn" class="btn btn-gold hidden" style="width:auto;padding:8px 12px;font-size:10px" onclick="openSub('customBoxManager')">➕ Box</button><button class="btn btn-dark" style="width:auto;padding:8px 12px;font-size:11px" onclick="logout()">Logout</button></div>
+</header>
+<div class="wrap">
+<div class="welcome"><h3>Welcome <span id="wName"></span> - <span class="l-letter">L</span>PC LearnHub</h3><p style="font-size:11px"><span id="wType"></span> | Class: <span id="wClass"></span> <span id="classFilterInfo" style="background:#E8F5E9;padding:2px 8px;border-radius:10px;font-size:10px"></span></p></div>
+<div id="mainGrid" class="grid"></div>
+
+<div id="masterSettings" class="section"></div>
+<div id="accountancy" class="section"></div><div id="business" class="section"></div><div id="economics" class="section"></div><div id="english" class="section"></div>
+<div id="examSec" class="section"></div><div id="excel" class="section"></div><div id="customBoxManager" class="section"></div>
+<div id="adminSettings" class="section"></div><div id="suggestionsAdmin" class="section"></div><div id="helpBox" class="section"></div>
+<div id="quiz" class="section"><div style="display:flex;justify-content:space-between"><h3>🧠 Smart Quiz - <span id="qClass"></span></h3><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div><div id="adminQuizBox" class="admin-box hidden"><p style="font-weight:800">📝 Admin - Quiz</p><input id="qT" placeholder="Question"><input id="q1" placeholder="Opt1"><input id="q2" placeholder="Opt2"><input id="q3" placeholder="Opt3"><input id="q4" placeholder="Opt4"><select id="qC"><option value="0">Correct=1</option><option value="1">Correct=2</option><option value="2">Correct=3</option><option value="3">Correct=4</option></select><button class="btn btn-gold" id="addB" onclick="addQ()">Add</button><button class="btn btn-dark hidden" id="updB" onclick="updQ()">Update</button><button class="btn hidden" id="canB" style="background:#fff;border:1px solid #ccc" onclick="cancelQ()">Cancel</button></div><div id="quizNewFormat"></div><div id="qRes"></div></div>
+<div id="puzzle1" class="section"></div><div id="puzzle2" class="section"></div>
+<div id="calc" class="section"><div style="display:flex;justify-content:space-between"><h3>Calculator</h3><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div><div style="display:flex;gap:6px;margin:10px 0;flex-wrap:wrap"><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="setCalc('normal')">Normal</button><button class="btn btn-gold" style="width:auto;padding:6px 10px;font-size:11px" onclick="setCalc('gst')">GST</button><button class="btn" style="width:auto;padding:6px 10px;font-size:11px;background:#fff;border:1px solid #ccc" onclick="setCalc('profit')">Profit</button></div><div id="calcNormal"><div style="background:#111;color:#0f0;padding:14px;border-radius:10px;font-size:22px;text-align:right;min-height:50px" id="calcD">0</div><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px"><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cClear()">C</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cBack()">⌫</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('%')">%</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('/')">÷</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('7')">7</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('8')">8</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('9')">9</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('*')">×</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('4')">4</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('5')">5</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('6')">6</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('-')">-</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('1')">1</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('2')">2</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('3')">3</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('+')">+</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('0')">0</button><button style="padding:12px;border-radius:8px;background:#222;color:#fff" onclick="cIn('.')">.</button><button style="padding:12px;border-radius:8px;background:#2E7D32;color:#fff;grid-column:span 2" onclick="cEq()">=</button></div></div><div id="calcGst" class="hidden"><div class="admin-box"><input id="gstAmt" type="number" placeholder="Amount"><select id="gstRate"><option value="18" selected>18%</option></select><button class="btn btn-gold" onclick="calcGST()">Calc</button><div id="gstR"></div></div></div><div id="calcProfit" class="hidden"><div class="admin-box"><input id="cp" type="number" placeholder="Cost"><input id="sp" type="number" placeholder="Sell"><button class="btn btn-gold" onclick="calcProfit()">Calc</button><div id="profitR"></div></div></div></div>
+<div id="certBox" class="section"><div class="cert"><div style="display:flex;gap:12px;justify-content:center;align-items:center"><img id="certLogo" src="" class="logo-img hidden"><div style="font-weight:900;font-size:26px"><span class="l-letter">L</span>PC <span style="color:#C9A227">LEARNHUB</span></div></div><h2 id="certHead"></h2><h1 id="certName"></h1><p><b><span id="certScore"></span></b> - <span id="certGame"></span></p><div style="display:flex;justify-content:space-between;margin-top:16px"><p style="font-size:11px">Date: <span id="certDate"></span></p><div style="text-align:center"><img id="certSign" src="" style="width:100px;height:50px;object-fit:contain" class="hidden"><p style="font-size:10px;border-top:1px solid #111">Signature</p></div></div></div><button class="btn btn-gold" onclick="window.print()">Print</button><button class="btn btn-dark" onclick="back()">Back</button></div>
+<div id="dynamicSections"></div>
+</div>
+</div>
+
+<script>
+let aKey='lpc_admin_final'; let gen=null; let ph=null; let curC='11'; let curUserName=''; let editIdx=-1; let editContentId=null; let curExam=null; let curExamType=null;
+let qs=JSON.parse(localStorage.getItem('qs_final')||'[{"t":"What is Accounting?","o":["Recording","Selling","Cooking","Travel"],"c":0}]');
+let subjectsData=JSON.parse(localStorage.getItem('lpc_subjects')||'{"accountancy":[],"business":[],"economics":[],"english":[]}');
+let examData=JSON.parse(localStorage.getItem('lpc_exam')||'{"accExam":{"pyq":[],"sample":[]},"busExam":{"pyq":[],"sample":[]},"ecoExam":{"pyq":[],"sample":[]}}');
+let excelData=JSON.parse(localStorage.getItem('lpc_excel')||'[]');
+let customBoxes=JSON.parse(localStorage.getItem('lpc_custom_boxes')||'[]');
+let customBoxContents=JSON.parse(localStorage.getItem('lpc_custom_contents')||'{}');
+let p1Data=JSON.parse(localStorage.getItem('p1_final')||'[{"j":"GNITNUOCCA","a":"ACCOUNTING"}]');
+let p2Data=JSON.parse(localStorage.getItem('p2_final')||'[{"q":"Cost 1000, Sell 1200, Profit %?","a":"20"}]');
+let suggestions=JSON.parse(localStorage.getItem('lpc_suggestions')||'[]');
+let adminBranding=JSON.parse(localStorage.getItem('lpc_branding')||'{"logo":null,"sign":null}');
+let masterSettings=JSON.parse(localStorage.getItem('lpc_master_settings')||'{"lColor":"red","aboutTitle":"LPC LEARNHUB","aboutBadge":"COMMERCE EXCELLENCE","aboutLines":["Empowering commerce students with smart learning, real-world concepts, and exam-focused preparation for a brighter future.","We transform complex Accountancy, Business Studies, and Economics into simple, understandable, and scoring subjects.","Your success is our mission — learn, practice, and achieve excellence with LPC, presented by Lakki Pilwan."],"loginBadge":"MASTER SETTINGS FINAL - L RED","boxColors":{"accountancy":"#FFF8DC","business":"#FFF8DC","economics":"#FFF8DC","english":"#E8F5E9","accExam":"#FFF3E0","busExam":"#FFF3E0","ecoExam":"#FFF3E0","excel":"#F3E5F5","quiz":"#111111","puzzle1":"#0F2A3C","puzzle2":"#0F2A3C","calc":"#111111"},"loginBg1":"#FFFEF8","loginBg2":"#FFF8DC","quizFormat":"single","showClassFilter":true}');
+let quizState={current:0,answers:[]};
+
+function applyMasterSettings(){
+ document.documentElement.style.setProperty('--l-color', masterSettings.lColor||'red');
+ document.documentElement.style.setProperty('--login-bg1', masterSettings.loginBg1||'#FFFEF8');
+ document.documentElement.style.setProperty('--login-bg2', masterSettings.loginBg2||'#FFF8DC');
+ document.getElementById('aboutBadge').innerText=masterSettings.aboutBadge||'COMMERCE EXCELLENCE';
+ document.getElementById('loginBadge').innerText=masterSettings.loginBadge||'MASTER SETTINGS';
+ let linesDiv=document.getElementById('aboutLines'); if(linesDiv && masterSettings.aboutLines){linesDiv.innerHTML=''; masterSettings.aboutLines.forEach(l=>{let p=document.createElement('p'); p.innerText=l; linesDiv.appendChild(p);});}
+ // update L red everywhere - already via CSS variable
+}
+applyMasterSettings();
+
+function tab(t){document.getElementById('bS').classList.toggle('active',t=='S'); document.getElementById('bA').classList.toggle('active',t=='A'); document.getElementById('sTab').classList.toggle('hidden',t!='S'); document.getElementById('aTab').classList.toggle('hidden',t!='A'); if(t=='A'){let h=!!localStorage.getItem(aKey); document.getElementById('a1').classList.toggle('hidden',h); document.getElementById('a2').classList.toggle('hidden',!h);}}
+function jmp(c,n){if(c.value.length==1) document.getElementById(n).focus();}
+function getO(){return document.getElementById('o1').value+document.getElementById('o2').value+document.getElementById('o3').value+document.getElementById('o4').value+document.getElementById('o5').value+document.getElementById('o6').value;}
+function resetLogin(){document.getElementById('s1').classList.remove('hidden'); document.getElementById('s2').classList.add('hidden'); document.getElementById('s3').classList.add('hidden');}
+function sendOTP(){let p=document.getElementById('phone').value.replace(/\D/g,''); if(p.length!=10) return alert('10 Digit'); ph=p; gen=Math.floor(100000+Math.random()*900000).toString(); document.getElementById('pShow').innerText=p; document.getElementById('oShow').innerText=gen; document.getElementById('s1').classList.add('hidden'); document.getElementById('s2').classList.remove('hidden'); for(let i=1;i<=6;i++) document.getElementById('o'+i).value='';}
+function verify(){let e=getO(); if(e.length!=6) return alert('6 boxes'); if(e!=gen) return alert('Wrong: '+gen); document.getElementById('vPh').innerText=ph; document.getElementById('s2').classList.add('hidden'); document.getElementById('s3').classList.remove('hidden');}
+function enterFinal(){let n=document.getElementById('sName').value.trim(); let c=document.getElementById('sClass').value; if(!n) return alert('Name'); if(!c) return alert('Class'); curUserName=n; curC=c; document.getElementById('loginPage').style.display='none'; showWelcomeSplash(n,c,'Student');}
+function aCreate(){let n=document.getElementById('aNew').value.trim(); let co=document.getElementById('aCon').value.trim(); if(n.length<3) return alert('Min 3'); if(n!=co) return alert('Same nahi'); localStorage.setItem(aKey,n); curUserName='Admin'; curC='All'; document.getElementById('loginPage').style.display='none'; showWelcomeSplash('Admin','All','Admin');}
+function aLogin(){if(document.getElementById('aPass').value!=localStorage.getItem(aKey)) return alert('Wrong'); curUserName='Admin'; curC='All'; document.getElementById('loginPage').style.display='none'; showWelcomeSplash('Admin','All','Admin');}
+function showWelcomeSplash(name,cls,type){document.getElementById('welcomeSplash').style.display='flex'; document.getElementById('splashClass').innerText=`Welcome ${name} | ${type} | Class ${cls}`; if(adminBranding.logo){let el=document.getElementById('splashLogo'); if(el){} } setTimeout(()=>{goToSubjects();},2000);}
+function goToSubjects(){document.getElementById('welcomeSplash').style.display='none'; document.getElementById('mainPage').style.display='block'; document.getElementById('uName').innerText=curUserName; document.getElementById('wName').innerText=curUserName; document.getElementById('wType').innerText=curUserName=='Admin'?'Admin':'Student'; document.getElementById('wClass').innerText=curC; document.getElementById('classFilterInfo').innerText=curUserName=='Admin'?'All Visible':`Only Class ${curC}`; renderMainGrid(); document.getElementById('adminBoxBtn').classList.toggle('hidden',curUserName!='Admin'); document.getElementById('masterSettingBtn').classList.toggle('hidden',curUserName!='Admin'); if(adminBranding.logo){document.getElementById('headerLogo').src=adminBranding.logo; document.getElementById('headerLogo').classList.remove('hidden');}}
+function changeP(){let n=document.getElementById('aN2').value.trim(); let co=document.getElementById('aC2').value.trim(); if(n.length<3) return alert('Min 3'); if(n!=co) return alert('Same nahi'); localStorage.setItem(aKey,n); alert('Changed');}
+function setC(c){ if(curUserName!='Admin'){ alert('Fixed: '+curC); return; } curC=c; document.getElementById('c11').classList.toggle('active',c=='11'); document.getElementById('c12').classList.toggle('active',c=='12'); renderMainGrid();}
+function logout(){document.getElementById('mainPage').style.display='none'; document.getElementById('welcomeSplash').style.display='none'; document.getElementById('loginPage').style.display='flex'; resetLogin(); back();}
+function back(){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')); clearInterval(t1); clearInterval(t2);}
+function saveAll(){localStorage.setItem('lpc_subjects',JSON.stringify(subjectsData)); localStorage.setItem('lpc_exam',JSON.stringify(examData)); localStorage.setItem('lpc_excel',JSON.stringify(excelData)); localStorage.setItem('lpc_custom_boxes',JSON.stringify(customBoxes)); localStorage.setItem('lpc_custom_contents',JSON.stringify(customBoxContents)); localStorage.setItem('lpc_suggestions',JSON.stringify(suggestions)); localStorage.setItem('lpc_branding',JSON.stringify(adminBranding)); localStorage.setItem('lpc_master_settings',JSON.stringify(masterSettings));}
+
+function renderMainGrid(){
+ let boxes=[
+   {id:'accountancy',icon:'📘',title:'Accountancy',color:masterSettings.boxColors.accountancy||'#FFF8DC'},
+   {id:'business',icon:'💼',title:'Business',color:masterSettings.boxColors.business||'#FFF8DC'},
+   {id:'economics',icon:'📊',title:'Economics',color:masterSettings.boxColors.economics||'#FFF8DC'},
+   {id:'english',icon:'📝',title:'English Grammar',color:masterSettings.boxColors.english||'#E8F5E9'},
+   {id:'accExam',icon:'🎯',title:'Accountancy Exam Preparation',color:masterSettings.boxColors.accExam||'#FFF3E0'},
+   {id:'busExam',icon:'🎯',title:'Business Studies Exam Preparation',color:masterSettings.boxColors.busExam||'#FFF3E0'},
+   {id:'ecoExam',icon:'🎯',title:'Economics Exam Preparation',color:masterSettings.boxColors.ecoExam||'#FFF3E0'},
+   {id:'excel',icon:'📊',title:'Excel',color:masterSettings.boxColors.excel||'#F3E5F5'},
+   {id:'quiz',icon:'🧠',title:'Quiz',color:masterSettings.boxColors.quiz||'#111111',textColor:'#fff'},
+   {id:'puzzle1',icon:'🧩',title:'Puzzle 1',color:masterSettings.boxColors.puzzle1||'#0F2A3C',textColor:'#fff'},
+   {id:'puzzle2',icon:'🎯',title:'Puzzle 2',color:masterSettings.boxColors.puzzle2||'#0F2A3C',textColor:'#fff'},
+   {id:'calc',icon:'🧮',title:'Calculator',color:masterSettings.boxColors.calc||'#111111',textColor:'#fff'},
+ ];
+ let html='';
+ boxes.forEach(b=>{
+   let isDark=b.textColor=='#fff';
+   html+=`<div class="card ${isDark?'dark':''}" style="background:${b.color};${b.textColor?`color:${b.textColor};border-color:${b.color}`:''}" onclick="handleCardClick('${b.id}','${b.id.includes('Exam')?'exam':'other'}')"><div style="font-size:24px">${b.icon}</div><b style="font-size:11px">${b.title}</b></div>`;
+ });
+ customBoxes.forEach(b=>{
+   html+=`<div class="card custom" style="background:${b.color||'#E1F5FE'}" onclick="openCustomBox('${b.id}')"><div style="font-size:24px">${b.icon||'📦'}</div><b style="font-size:11px">${b.title}</b></div>`;
+ });
+ let extra=[
+   {id:'adminSettings',icon:'🎨',title:'Logo & Signature',onlyAdmin:true},
+   {id:'suggestionsAdmin',icon:'💬',title:`Student Suggestions ${suggestions.length>0?`(${suggestions.length})`:''}`,onlyAdmin:true},
+   {id:'helpBox',icon:'🆘',title:'Help / Suggestion',onlyStudent:true},
+   {id:'masterSettings',icon:'⚙️',title:'MAIN SETTINGS',onlyAdmin:true,highlight:true},
+ ];
+ extra.forEach(c=>{
+   if(c.onlyAdmin && curUserName!='Admin') return;
+   if(c.onlyStudent && curUserName=='Admin') return;
+   let style=c.highlight?'background:var(--l-color);color:#fff;border-color:var(--l-color)':'';
+   html+=`<div class="card ${c.highlight?'':''}" style="${style}" onclick="handleCardClick('${c.id}','admin')"><div style="font-size:24px">${c.icon}</div><b style="font-size:11px">${c.title}</b></div>`;
+ });
+ document.getElementById('mainGrid').innerHTML=html;
+ let dyn=document.getElementById('dynamicSections'); dyn.innerHTML=''; customBoxes.forEach(b=>{let sec=document.createElement('div'); sec.id='custom_'+b.id; sec.className='section'; dyn.appendChild(sec);});
+}
+function handleCardClick(id,type){ if(type=='exam'){openExam(id); return;} openSub(id); }
+
+function openSub(id){
+ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+ if(id=='masterSettings'){
+   if(curUserName!='Admin') return alert('Only Admin');
+   let html=`<div style="display:flex;justify-content:space-between"><h3>⚙️ MAIN SETTINGS - Full Website Control</h3><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div>
+   
+   <div class="admin-box" style="border-color:var(--l-color);background:#FFF0F0">
+   <p style="font-weight:900;color:var(--l-color)">🔴 L Color - LPC ka L Red</p>
+   <div class="color-row"><span>Choose L Color:</span><input type="color" id="lColorPicker" value="${masterSettings.lColor||'#ff0000'}"><span id="lColorText">${masterSettings.lColor}</span></div>
+   <button class="btn btn-red" onclick="updateLColor()">Update L Color - Red pe set hai</button>
+   <p style="font-size:11px;color:#666">Jahan bhi LPC likha hai, L isi color me dikhega</p>
+   </div>
+
+   <div class="admin-box"><p style="font-weight:800">📝 About Us Lines - English (Login Page)</p>
+   <input id="setBadge" placeholder="Badge Text" value="${masterSettings.aboutBadge||''}">
+   <textarea id="setLine1" placeholder="Line 1">${masterSettings.aboutLines[0]||''}</textarea>
+   <textarea id="setLine2" placeholder="Line 2">${masterSettings.aboutLines[1]||''}</textarea>
+   <textarea id="setLine3" placeholder="Line 3">${masterSettings.aboutLines[2]||''}</textarea>
+   <button class="btn btn-gold" onclick="updateAbout()">Update About Us</button>
+   </div>
+
+   <div class="admin-box"><p style="font-weight:800">🎨 Subjects Boxes ka Colour Change - Admin Control</p>
+   <p style="font-size:11px;color:#666">Har box ka colour yaha se change karo</p>
+   ${Object.keys(masterSettings.boxColors).map(key=>`
+     <div class="color-row"><span style="min-width:120px;font-size:12px;font-weight:700">${key}</span><input type="color" id="color_${key}" value="${masterSettings.boxColors[key]}"><span style="font-size:11px">${masterSettings.boxColors[key]}</span></div>
+   `).join('')}
+   <button class="btn btn-gold" onclick="updateBoxColors()">Update All Box Colors</button>
+   </div>
+
+   <div class="admin-box"><p style="font-weight:800">🌈 Login Page & Format Change</p>
+   <div class="color-row"><span>Login BG 1</span><input type="color" id="loginBg1" value="${masterSettings.loginBg1}"><span>Login BG 2</span><input type="color" id="loginBg2" value="${masterSettings.loginBg2}"></div>
+   <input id="setLoginBadge" placeholder="Login Badge Text" value="${masterSettings.loginBadge||''}">
+   <select id="setQuizFormat"><option value="single" ${masterSettings.quizFormat=='single'?'selected':''}>Quiz Format: Single Question (New)</option><option value="all" ${masterSettings.quizFormat=='all'?'selected':''}>Quiz Format: All Questions (Old)</option></select>
+   <button class="btn btn-gold" onclick="updateLoginFormat()">Update Login & Format</button>
+   </div>
+
+   <div class="admin-box" style="background:#E8F5E9;border-color:#2E7D32"><p style="font-weight:800">✅ All Settings Saved Automatically</p><p style="font-size:11px">Sab kuch Admin ke paas hai - Baar-baar code change karwane ki zarurat nahi. Logo, Signature, Boxes, Colours, About Us, Login Page sab yaha se.</p><button class="btn btn-dark" onclick="resetAllSettings()">Reset to Default Settings</button></div>
+   `;
+   document.getElementById('masterSettings').innerHTML=html; document.getElementById('masterSettings').classList.add('active'); return;
+ }
+ // ... rest of sections same as before (accountancy, business etc) - using same logic with class filter
+ if(['accountancy','business','economics','english'].includes(id)){
+   let isAdmin=curUserName=='Admin';
+   let tm={accountancy:'ACCOUNTANCY',business:'BUSINESS',economics:'ECONOMICS',english:'ENGLISH GRAMMAR'};
+   let html=`<div style="display:flex;justify-content:space-between"><h3><span class="l-letter">L</span>PC - ${tm[id]} - ${isAdmin?'All':`Class ${curC} Only`}</h3><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div>`;
+   if(isAdmin){html+=`<div class="admin-box"><p style="font-weight:800">📝 Admin - ${tm[id]} - Class + PDF</p><input id="${id}_title" placeholder="Content Name"><textarea id="${id}_notes" placeholder="Notes"></textarea><select id="${id}_class"><option value="11">Class 11</option><option value="12">Class 12</option><option value="both">Both</option></select><input id="${id}_pdfFile" type="file" accept=".pdf" class="file-input"><button class="btn btn-gold" id="${id}_addBtn" onclick="addContent('${id}')">Add</button><button class="btn btn-dark hidden" id="${id}_updBtn" onclick="updateContent('${id}')">Update</button><button class="btn hidden" id="${id}_canBtn" style="background:#fff;border:1px solid #ccc" onclick="cancelContent('${id}')">Cancel</button></div>`;}
+   let list=(subjectsData[id]||[]).filter(it=>isAdmin || it.class==curC || it.class=='both' || !it.class);
+   if(list.length==0) html+=`<p style="color:#999">No content for Class ${curC}.</p>`;
+   (subjectsData[id]||[]).forEach((it,origIdx)=>{let visible=isAdmin || it.class==curC || it.class=='both' || !it.class; if(!visible) return; html+=`<div class="content-card"><b>${it.title}</b> <span style="font-size:10px;background:#E8F5E9;padding:2px 6px;border-radius:10px">Class: ${it.class||'both'}</span><p style="font-size:12px;white-space:pre-wrap">${it.notes||''}</p>${it.pdfName?`<p style="font-size:11px;background:#E3F2FD;padding:6px;border-radius:6px">📄 ${it.pdfName}</p>`:''}${it.pdfData?`<div style="display:flex;gap:6px;margin-top:6px"><button style="font-size:12px;padding:6px 12px;border-radius:6px;background:#0D47A1;color:#fff;border:none" onclick="openPDF('${id}',${origIdx})">Open</button><button style="font-size:12px;padding:6px 12px;border-radius:6px;background:#2E7D32;color:#fff;border:none" onclick="downloadPDF('${id}',${origIdx})">Download</button></div>`:''}${isAdmin?`<div style="display:flex;gap:6px;margin-top:8px"><button style="font-size:11px;padding:4px 10px;border:1px solid #111;background:#fff" onclick="editContent('${id}',${origIdx})">Edit</button><button style="font-size:11px;padding:4px 10px;border:1px solid red;background:#FFE9E9;color:red" onclick="deleteContent('${id}',${origIdx})">Delete</button></div>`:''}</div>`;});
+   document.getElementById(id).innerHTML=html; document.getElementById(id).classList.add('active'); return;
+ }
+ if(id=='adminSettings'){
+   if(curUserName!='Admin') return alert('Only Admin');
+   let html=`<div style="display:flex;justify-content:space-between"><h3>🎨 Logo & Signature</h3><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div><div class="admin-box"><p style="font-weight:800">Logo Upload</p>${adminBranding.logo?`<img src="${adminBranding.logo}" style="width:80px;height:80px;border-radius:12px;border:2px solid #C9A227"><br>`:''}<input id="logoFile" type="file" accept="image/*" class="file-input"><button class="btn btn-gold" onclick="uploadLogo()">Upload Logo</button><button class="btn" style="background:#FFCDD2;border:1px solid red;color:red" onclick="removeLogo()">Remove</button></div><div class="admin-box"><p style="font-weight:800">Signature Upload</p>${adminBranding.sign?`<img src="${adminBranding.sign}" style="width:150px;height:60px;object-fit:contain;border:1px solid #111"><br>`:''}<input id="signFile" type="file" accept="image/*" class="file-input"><button class="btn btn-gold" onclick="uploadSign()">Upload Signature</button><button class="btn" style="background:#FFCDD2;border:1px solid red;color:red" onclick="removeSign()">Remove</button></div>`;
+   document.getElementById('adminSettings').innerHTML=html; document.getElementById('adminSettings').classList.add('active'); return;
+ }
+ if(id=='suggestionsAdmin'){
+   if(curUserName!='Admin') return alert('Only Admin');
+   let html=`<div style="display:flex;justify-content:space-between"><h3>💬 Student Suggestions - ${suggestions.length}</h3><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div>`;
+   if(suggestions.length==0) html+=`<p style="color:#999">No messages.</p>`;
+   suggestions.forEach((s,idx)=>{html+=`<div class="suggestion-card"><p style="font-size:12px;font-weight:700">${s.name} | Class ${s.class} | +91 ${s.phone} | ${s.date}</p><p style="font-size:13px;margin-top:6px">${s.msg}</p><button style="font-size:11px;padding:4px 8px;border-radius:6px;background:#FFCDD2;border:1px solid red;color:red;margin-top:6px" onclick="deleteSuggestion(${idx})">Delete</button></div>`;});
+   document.getElementById('suggestionsAdmin').innerHTML=html; document.getElementById('suggestionsAdmin').classList.add('active'); return;
+ }
+ if(id=='helpBox'){
+   let html=`<div style="display:flex;justify-content:space-between"><h3>🆘 Help / Suggestion Box</h3><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div><div class="admin-box"><p style="font-weight:800">Message Admin ko jayega</p><textarea id="helpMsg" placeholder="Suggestion likho..."></textarea><button class="btn btn-gold" onclick="sendSuggestion()">Send to Admin</button><p style="font-size:11px;color:#666;margin-top:8px">Your Name: ${curUserName} | Class: ${curC}</p></div>`;
+   document.getElementById('helpBox').innerHTML=html; document.getElementById('helpBox').classList.add('active'); return;
+ }
+ if(id=='customBoxManager'){
+   if(curUserName!='Admin') return alert('Only Admin');
+   let html=`<div style="display:flex;justify-content:space-between"><h3>➕ Add / Delete Boxes</h3><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div><div class="admin-box"><p style="font-weight:800">Create New Box</p><input id="newBoxTitle" placeholder="Box Name"><input id="newBoxIcon" placeholder="Icon"><input type="color" id="newBoxColor" value="#E1F5FE"><button class="btn btn-gold" onclick="createNewBox()">Add Box</button></div>`;
+   customBoxes.forEach(b=>{html+=`<div class="content-card" style="display:flex;justify-content:space-between;align-items:center"><span><b>${b.icon} ${b.title}</b></span><button style="font-size:11px;padding:6px 12px;border-radius:6px;background:#FFCDD2;border:1px solid red;color:red" onclick="deleteBox('${b.id}')">Delete</button></div>`;});
+   document.getElementById('customBoxManager').innerHTML=html; document.getElementById('customBoxManager').classList.add('active'); return;
+ }
+ if(id=='excel'){
+   let isAdmin=curUserName=='Admin';
+   let html=`<div style="display:flex;justify-content:space-between"><h3>📊 Excel</h3><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div>`;
+   if(isAdmin){html+=`<div class="admin-box"><p style="font-weight:800">📊 Excel - File + Class</p><input id="excel_title" placeholder="File Name"><select id="excel_class"><option value="11">Class 11</option><option value="12">Class 12</option><option value="both">Both</option></select><input id="excel_file" type="file" accept=".xls,.xlsx,.pdf,.csv" class="file-input"><button class="btn btn-gold" id="excel_addBtn" onclick="addExcel()">Add</button></div>`;}
+   excelData.forEach((it,origIdx)=>{let visible=isAdmin || it.class==curC || it.class=='both' || !it.class; if(!visible) return; html+=`<div class="content-card"><b>${it.title}</b> <span style="font-size:10px;background:#F3E5F5;padding:2px 6px;border-radius:10px">Class: ${it.class||'both'}</span><p style="font-size:11px;background:#F3E5F5;padding:6px;border-radius:6px">📊 ${it.fileName}</p><div style="display:flex;gap:6px;margin-top:6px"><button style="font-size:12px;padding:6px 12px;border-radius:6px;background:#6A1B9A;color:#fff;border:none" onclick="openExcel(${origIdx})">Open</button><button style="font-size:12px;padding:6px 12px;border-radius:6px;background:#2E7D32;color:#fff;border:none" onclick="downloadExcel(${origIdx})">Download</button></div>${isAdmin?`<div style="display:flex;gap:6px;margin-top:8px"><button style="font-size:11px;padding:4px 10px;border:1px solid red;background:#FFE9E9;color:red" onclick="deleteExcel(${origIdx})">Delete</button></div>`:''}</div>`;});
+   document.getElementById(id).innerHTML=html; document.getElementById(id).classList.add('active'); return;
+ }
+ if(id=='quiz'){document.getElementById('quiz').classList.add('active'); document.getElementById('qClass').innerText=curUserName=='Admin'?'All':curC; document.getElementById('adminQuizBox').classList.toggle('hidden',curUserName!='Admin'); initNewQuiz(); return;}
+ if(id=='puzzle1'){renderP1(); document.getElementById('puzzle1').classList.add('active'); return;}
+ if(id=='puzzle2'){renderP2(); document.getElementById('puzzle2').classList.add('active'); return;}
+ document.getElementById(id).classList.add('active'); if(id=='calc') setCalc('normal');
+}
+
+// MAIN SETTINGS FUNCTIONS
+function updateLColor(){
+ let col=document.getElementById('lColorPicker').value;
+ masterSettings.lColor=col;
+ saveAll(); applyMasterSettings(); renderMainGrid();
+ alert('L Color Updated to: '+col+' - Har jagah L ab '+col+' me dikhega');
+}
+function updateAbout(){
+ masterSettings.aboutBadge=document.getElementById('setBadge').value;
+ masterSettings.aboutLines=[document.getElementById('setLine1').value,document.getElementById('setLine2').value,document.getElementById('setLine3').value];
+ masterSettings.loginBadge=document.getElementById('setLoginBadge')?.value||masterSettings.loginBadge;
+ saveAll(); applyMasterSettings();
+ alert('About Us Updated');
+}
+function updateBoxColors(){
+ Object.keys(masterSettings.boxColors).forEach(key=>{
+   let el=document.getElementById('color_'+key);
+   if(el) masterSettings.boxColors[key]=el.value;
+ });
+ saveAll(); renderMainGrid();
+ alert('All Box Colors Updated - Home pe dekho');
+}
+function updateLoginFormat(){
+ masterSettings.loginBg1=document.getElementById('loginBg1').value;
+ masterSettings.loginBg2=document.getElementById('loginBg2').value;
+ masterSettings.loginBadge=document.getElementById('setLoginBadge').value;
+ masterSettings.quizFormat=document.getElementById('setQuizFormat').value;
+ saveAll(); applyMasterSettings();
+ alert('Login Page & Format Updated');
+}
+function resetAllSettings(){
+ if(!confirm('Reset all settings to default? L red, box colors, about us sab default ho jayega')) return;
+ localStorage.removeItem('lpc_master_settings');
+ location.reload();
+}
+
+// OTHER FUNCTIONS (same as before - shortened for space, full working)
+function uploadLogo(){let f=document.getElementById('logoFile').files[0]; if(!f) return alert('Choose Logo'); let r=new FileReader(); r.onload=e=>{adminBranding.logo=e.target.result; saveAll(); alert('Logo Uploaded'); openSub('adminSettings'); if(document.getElementById('headerLogo')){document.getElementById('headerLogo').src=adminBranding.logo; document.getElementById('headerLogo').classList.remove('hidden');}}; r.readAsDataURL(f);}
+function removeLogo(){if(!confirm('Remove?')) return; adminBranding.logo=null; saveAll(); openSub('adminSettings'); document.getElementById('headerLogo').classList.add('hidden');}
+function uploadSign(){let f=document.getElementById('signFile').files[0]; if(!f) return alert('Choose Sign'); let r=new FileReader(); r.onload=e=>{adminBranding.sign=e.target.result; saveAll(); alert('Signature Uploaded'); openSub('adminSettings');}; r.readAsDataURL(f);}
+function removeSign(){if(!confirm('Remove?')) return; adminBranding.sign=null; saveAll(); openSub('adminSettings');}
+function sendSuggestion(){let msg=document.getElementById('helpMsg').value.trim(); if(!msg) return alert('Message likho'); suggestions.push({name:curUserName,class:curC,phone:ph||'N/A',msg,date:new Date().toLocaleString()}); saveAll(); document.getElementById('helpMsg').value=''; alert('✅ Sent to Admin!'); back();}
+function deleteSuggestion(i){if(!confirm('Delete?')) return; suggestions.splice(i,1); saveAll(); openSub('suggestionsAdmin'); renderMainGrid();}
+function openCustomBox(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')); let b=customBoxes.find(x=>x.id==id); if(!b) return; let isAdmin=curUserName=='Admin'; let html=`<div style="display:flex;justify-content:space-between"><h3>${b.icon} ${b.title}</h3><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div>`; if(isAdmin){html+=`<div class="admin-box"><p style="font-weight:800">📝 Admin - ${b.title} - Class + File</p><input id="cb_title" placeholder="Content Name"><textarea id="cb_notes" placeholder="Notes"></textarea><select id="cb_class"><option value="11">Class 11</option><option value="12">Class 12</option><option value="both">Both</option></select><input id="cb_file" type="file" class="file-input"><button class="btn btn-gold" onclick="addCustomContent('${id}')">Add</button></div>`;} (customBoxContents[id]||[]).forEach((it,origIdx)=>{let visible=isAdmin || it.class==curC || it.class=='both' || !it.class; if(!visible) return; html+=`<div class="content-card"><b>${it.title}</b> <span style="font-size:10px;background:#E1F5FE;padding:2px 6px;border-radius:10px">Class: ${it.class||'both'}</span><p style="font-size:12px">${it.notes||''}</p>${it.fileName?`<p style="font-size:11px;background:#E1F5FE;padding:6px;border-radius:6px">📄 ${it.fileName}</p>`:''}${it.fileData?`<div style="display:flex;gap:6px;margin-top:6px"><button style="font-size:12px;padding:6px 12px;border-radius:6px;background:#0277BD;color:#fff;border:none" onclick="openCustomFile('${id}',${origIdx})">Open</button><button style="font-size:12px;padding:6px 12px;border-radius:6px;background:#2E7D32;color:#fff;border:none" onclick="downloadCustomFile('${id}',${origIdx})">Download</button></div>`:''}${isAdmin?`<div style="display:flex;gap:6px;margin-top:8px"><button style="font-size:11px;padding:4px 10px;border:1px solid red;background:#FFE9E9;color:red" onclick="deleteCustomContent('${id}',${origIdx})">Delete</button></div>`:''}</div>`;}); document.getElementById('custom_'+id).innerHTML=html; document.getElementById('custom_'+id).classList.add('active');}
+function addCustomContent(id){let t=document.getElementById('cb_title').value.trim(); let n=document.getElementById('cb_notes').value.trim(); let cls=document.getElementById('cb_class').value; let f=document.getElementById('cb_file').files[0]; if(!t) return alert('Name'); if(f){let r=new FileReader(); r.onload=e=>{if(!customBoxContents[id]) customBoxContents[id]=[]; customBoxContents[id].push({title:t,notes:n,class:cls,fileName:f.name,fileData:e.target.result}); saveAll(); openCustomBox(id);}; r.readAsDataURL(f);} else{if(!customBoxContents[id]) customBoxContents[id]=[]; customBoxContents[id].push({title:t,notes:n,class:cls,fileName:null,fileData:null}); saveAll(); openCustomBox(id);}}
+function openCustomFile(id,idx){let it=customBoxContents[id][idx]; let w=window.open(''); w.document.write('<iframe src="'+it.fileData+'" style="width:100%;height:100vh;border:none"></iframe>');}
+function downloadCustomFile(id,idx){let it=customBoxContents[id][idx]; let a=document.createElement('a'); a.href=it.fileData; a.download=it.fileName; a.click();}
+function deleteCustomContent(id,idx){if(!confirm('Delete?')) return; customBoxContents[id].splice(idx,1); saveAll(); openCustomBox(id);}
+function createNewBox(){let t=document.getElementById('newBoxTitle').value.trim(); let icon=document.getElementById('newBoxIcon').value.trim()||'📦'; let col=document.getElementById('newBoxColor')?.value||'#E1F5FE'; if(!t) return alert('Name'); let id='custom_'+Date.now(); customBoxes.push({id,title:t,icon,color:col}); customBoxContents[id]=[]; saveAll(); renderMainGrid(); alert('Added: '+t); openSub('customBoxManager');}
+function deleteBox(id){if(!confirm('Delete box?')) return; customBoxes=customBoxes.filter(b=>b.id!=id); delete customBoxContents[id]; saveAll(); renderMainGrid(); openSub('customBoxManager');}
+function openExam(examKey){curExam=examKey; document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')); let tm={accExam:'Accountancy Exam Preparation',busExam:'Business Studies Exam Preparation',ecoExam:'Economics Exam Preparation'}; let html=`<div style="display:flex;justify-content:space-between"><h3>🎯 ${tm[examKey]} - ${curUserName=='Admin'?'All':`Class ${curC} Only`}</h3><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div><div class="inner-grid"><div class="inner-box" onclick="openExamType('pyq')">📄<br>Previous Year<br>Question Paper</div><div class="inner-box" style="background:linear-gradient(135deg,#FFF3E0,#FFCC80);border-color:#E65100" onclick="openExamType('sample')">📝<br>Practice / Sample<br>Paper</div></div>`; document.getElementById('examSec').innerHTML=html; document.getElementById('examSec').classList.add('active');}
+function openExamType(type){curExamType=type; let isAdmin=curUserName=='Admin'; let examName={accExam:'Accountancy',busExam:'Business Studies',ecoExam:'Economics'}[curExam]; let typeName=type=='pyq'?'Previous Year':'Practice / Sample'; let html=`<div style="display:flex;justify-content:space-between"><h3>${examName} - ${typeName} - ${isAdmin?'All':`Class ${curC}`}</h3><div><button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="openExam('${curExam}')">← Back</button> <button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">🏠 Home</button></div></div>`; if(isAdmin){html+=`<div class="admin-box"><p style="font-weight:800">📝 Admin - ${typeName} - Class + PDF</p><input id="exam_title" placeholder="PDF Name"><select id="exam_class"><option value="11">Class 11</option><option value="12">Class 12</option><option value="both">Both</option></select><input id="exam_file" type="file" accept=".pdf" class="file-input"><button class="btn btn-gold" id="exam_addBtn" onclick="addExamPDF()">Add</button></div>`;} (examData[curExam][type]||[]).forEach((it,origIdx)=>{let visible=isAdmin || it.class==curC || it.class=='both' || !it.class; if(!visible) return; html+=`<div class="content-card"><b>${it.title}</b> <span style="font-size:10px;background:#E3F2FD;padding:2px 6px;border-radius:10px">Class: ${it.class||'both'}</span><p style="font-size:11px;background:#E3F2FD;padding:6px;border-radius:6px">📄 ${it.fileName}</p><div style="display:flex;gap:6px;margin-top:8px"><button style="font-size:12px;padding:6px 12px;border-radius:6px;background:#0D47A1;color:#fff;border:none" onclick="openExamPDF(${origIdx})">Open</button><button style="font-size:12px;padding:6px 12px;border-radius:6px;background:#2E7D32;color:#fff;border:none" onclick="downloadExamPDF(${origIdx})">Download</button></div>${isAdmin?`<div style="display:flex;gap:6px;margin-top:8px"><button style="font-size:11px;padding:4px 10px;border:1px solid red;background:#FFE9E9;color:red" onclick="deleteExamPDF(${origIdx})">Delete</button></div>`:''}</div>`;}); document.getElementById('examSec').innerHTML=html;}
+function addExamPDF(){let t=document.getElementById('exam_title').value.trim(); let cls=document.getElementById('exam_class').value; let f=document.getElementById('exam_file').files[0]; if(!t) return alert('Name'); if(!f) return alert('PDF'); let r=new FileReader(); r.onload=e=>{examData[curExam][curExamType].push({title:t,class:cls,fileName:f.name,fileData:e.target.result}); saveAll(); openExamType(curExamType);}; r.readAsDataURL(f);}
+function deleteExamPDF(i){if(!confirm('Delete?')) return; examData[curExam][curExamType].splice(i,1); saveAll(); openExamType(curExamType);}
+function openExamPDF(i){let it=examData[curExam][curExamType][i]; let w=window.open(''); w.document.write('<iframe src="'+it.fileData+'" style="width:100%;height:100vh;border:none"></iframe>');}
+function downloadExamPDF(i){let it=examData[curExam][curExamType][i]; let a=document.createElement('a'); a.href=it.fileData; a.download=it.fileName; a.click();}
+function addContent(sub){let t=document.getElementById(sub+'_title').value.trim(); let n=document.getElementById(sub+'_notes').value.trim(); let cls=document.getElementById(sub+'_class').value; let f=document.getElementById(sub+'_pdfFile').files[0]; if(!t) return alert('Name'); if(f){let r=new FileReader(); r.onload=e=>{subjectsData[sub].push({title:t,notes:n,class:cls,pdfData:e.target.result,pdfName:f.name}); saveAll(); openSub(sub);}; r.readAsDataURL(f);} else{subjectsData[sub].push({title:t,notes:n,class:cls,pdfData:null,pdfName:null}); saveAll(); openSub(sub);}}
+function editContent(sub,i){let it=subjectsData[sub][i]; document.getElementById(sub+'_title').value=it.title; document.getElementById(sub+'_notes').value=it.notes; if(document.getElementById(sub+'_class')) document.getElementById(sub+'_class').value=it.class||'both'; editContentId=i; document.getElementById(sub+'_addBtn').classList.add('hidden'); document.getElementById(sub+'_updBtn').classList.remove('hidden'); document.getElementById(sub+'_canBtn').classList.remove('hidden');}
+function updateContent(sub){if(editContentId==null) return; let t=document.getElementById(sub+'_title').value.trim(); let n=document.getElementById(sub+'_notes').value.trim(); let cls=document.getElementById(sub+'_class').value; let f=document.getElementById(sub+'_pdfFile').files[0]; if(!t) return alert('Name'); if(f){let r=new FileReader(); r.onload=e=>{subjectsData[sub][editContentId]={title:t,notes:n,class:cls,pdfData:e.target.result,pdfName:f.name}; saveAll(); cancelContent(sub); openSub(sub);}; r.readAsDataURL(f);} else{let o=subjectsData[sub][editContentId]; subjectsData[sub][editContentId]={title:t,notes:n,class:cls,pdfData:o.pdfData,pdfName:o.pdfName}; saveAll(); cancelContent(sub); openSub(sub);}}
+function cancelContent(sub){document.getElementById(sub+'_title').value=''; document.getElementById(sub+'_notes').value=''; document.getElementById(sub+'_pdfFile').value=''; editContentId=null; document.getElementById(sub+'_addBtn').classList.remove('hidden'); document.getElementById(sub+'_updBtn').classList.add('hidden'); document.getElementById(sub+'_canBtn').classList.add('hidden');}
+function deleteContent(sub,i){if(!confirm('Delete?')) return; subjectsData[sub].splice(i,1); saveAll(); openSub(sub);}
+function openPDF(sub,i){let it=subjectsData[sub][i]; let w=window.open(''); w.document.write('<iframe src="'+it.pdfData+'" style="width:100%;height:100vh;border:none"></iframe>');}
+function downloadPDF(sub,i){let it=subjectsData[sub][i]; let a=document.createElement('a'); a.href=it.pdfData; a.download=it.pdfName; a.click();}
+function addExcel(){let t=document.getElementById('excel_title').value.trim(); let cls=document.getElementById('excel_class').value; let f=document.getElementById('excel_file').files[0]; if(!t) return alert('Name'); if(!f) return alert('File'); let r=new FileReader(); r.onload=e=>{excelData.push({title:t,class:cls,fileName:f.name,fileData:e.target.result}); saveAll(); openSub('excel');}; r.readAsDataURL(f);}
+function deleteExcel(i){if(!confirm('Delete?')) return; excelData.splice(i,1); saveAll(); openSub('excel');}
+function openExcel(i){let it=excelData[i]; let w=window.open(''); w.document.write('<iframe src="'+it.fileData+'" style="width:100%;height:100vh;border:none"></iframe>');}
+function downloadExcel(i){let it=excelData[i]; let a=document.createElement('a'); a.href=it.fileData; a.download=it.fileName; a.click();}
+function initNewQuiz(){quizState.current=0; quizState.answers=new Array(qs.length).fill(null); renderQuizQuestion();}
+function renderQuizQuestion(){let idx=quizState.current; let q=qs[idx]; if(!q){document.getElementById('quizNewFormat').innerHTML='<p>No questions</p>'; return;} let per=Math.round(((idx+1)/qs.length)*100); let html=`<div class="quiz-container"><div class="quiz-progress"><div class="quiz-progress-bar" style="width:${per}%"></div></div><p style="font-size:12px">Q ${idx+1}/${qs.length} - ${per}%</p><div style="font-size:18px;font-weight:700;margin:12px 0">Q${idx+1}. ${q.t}</div><div class="quiz-options">`; q.o.forEach((op,j)=>{let sel=quizState.answers[idx]==j?'sel':''; html+=`<label class="${sel}" onclick="selectNewQuiz(${j})"><input type="radio" name="newQ" value="${j}" ${quizState.answers[idx]==j?'checked':''} style="width:20px;height:20px"> <span>${op}</span></label>`;}); html+=`</div><div style="display:flex;gap:10px;margin-top:16px"><button class="btn btn-dark" style="width:auto;padding:8px 16px" ${idx==0?'disabled':''} onclick="prevQuiz()">← Prev</button><button class="btn btn-gold" style="width:auto;padding:8px 16px;margin-left:auto" onclick="nextQuiz()">${idx==qs.length-1?'Submit':'Next →'}</button></div></div>`; document.getElementById('quizNewFormat').innerHTML=html;}
+function selectNewQuiz(opt){quizState.answers[quizState.current]=opt; renderQuizQuestion();}
+function prevQuiz(){if(quizState.current>0){quizState.current--; renderQuizQuestion();}}
+function nextQuiz(){if(quizState.answers[quizState.current]==null){return alert('Option select karo');} if(quizState.current<qs.length-1){quizState.current++; renderQuizQuestion();} else{submitNewQuiz();}}
+function submitNewQuiz(){let sc=0; quizState.answers.forEach((ans,i)=>{if(ans==qs[i].c) sc++;}); let per=Math.round((sc/qs.length)*100); document.getElementById('qRes').innerHTML=`<div style="background:${per>=50?'#E8F5E9':'#FFEBEE'};padding:14px;border-radius:12px;text-align:center"><b>Score: ${sc}/${qs.length} (${per}%)</b></div>`; if(per>=50) showCert('Quiz Certificate',`${sc}/${qs.length} (${per}%)`,'Smart Quiz');}
+function addQ(){let t=document.getElementById('qT').value.trim(); if(!t) return alert('Q'); let o=[document.getElementById('q1').value.trim(),document.getElementById('q2').value.trim(),document.getElementById('q3').value.trim(),document.getElementById('q4').value.trim()]; if(o[0]==''||o[1]=='') return alert('2 opt'); qs.push({t,o,c:parseInt(document.getElementById('qC').value)}); localStorage.setItem('qs_final',JSON.stringify(qs)); document.getElementById('qT').value=''; document.getElementById('q1').value=''; document.getElementById('q2').value=''; document.getElementById('q3').value=''; document.getElementById('q4').value=''; initNewQuiz();}
+function updQ(){qs[editIdx]={t:document.getElementById('qT').value.trim(),o:[document.getElementById('q1').value.trim(),document.getElementById('q2').value.trim(),document.getElementById('q3').value.trim(),document.getElementById('q4').value.trim()],c:parseInt(document.getElementById('qC').value)}; localStorage.setItem('qs_final',JSON.stringify(qs)); cancelQ(); initNewQuiz();}
+function cancelQ(){editIdx=-1; document.getElementById('qT').value=''; document.getElementById('q1').value=''; document.getElementById('q2').value=''; document.getElementById('q3').value=''; document.getElementById('q4').value=''; document.getElementById('addB').classList.remove('hidden'); document.getElementById('updB').classList.add('hidden'); document.getElementById('canB').classList.add('hidden');}
+function editQ(i){editIdx=i; let q=qs[i]; document.getElementById('qT').value=q.t; document.getElementById('q1').value=q.o[0]; document.getElementById('q2').value=q.o[1]; document.getElementById('q3').value=q.o[2]; document.getElementById('q4').value=q.o[3]; document.getElementById('qC').value=q.c; document.getElementById('addB').classList.add('hidden'); document.getElementById('updB').classList.remove('hidden'); document.getElementById('canB').classList.remove('hidden');}
+function delQ(i){if(!confirm('Delete?')) return; qs.splice(i,1); localStorage.setItem('qs_final',JSON.stringify(qs)); initNewQuiz();}
+let t1=null,t2=null;
+function renderP1(){let isA=curUserName=='Admin'; let h=`<div style="display:flex;justify-content:space-between"><h3>Puzzle 1</h3><div><span style="font-weight:800;color:red;background:#FFEBEE;padding:6px 12px;border-radius:20px" id="t1">03:00</span> <button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div></div>`; if(isA)h+=`<div class="admin-box"><p style="font-weight:800">🧩 Admin - Puzzle 1</p><input id="p1_j" placeholder="Jumble"><input id="p1_a" placeholder="Answer"><button class="btn btn-gold" id="p1_add" onclick="addP1()">Add</button></div>`; p1Data.forEach((w,i)=>{h+=`<div style="background:#F8FAFF;border:2px solid #1E88E5;border-radius:10px;padding:10px;margin:8px 0"><b>${i+1}. ${w.j}</b><input id="p1_${i}" placeholder="Answer">${isA?`<button style="font-size:11px" onclick="delP1(${i})">Delete</button>`:''}</div>`;}); h+=`<button class="btn btn-gold" id="p1S" onclick="startP1()">Start</button><button class="btn btn-dark hidden" id="p1Sub" onclick="subP1()">Submit</button><div id="p1R"></div>`; document.getElementById('puzzle1').innerHTML=h;}
+function renderP2(){let isA=curUserName=='Admin'; let h=`<div style="display:flex;justify-content:space-between"><h3>Puzzle 2</h3><div><span style="font-weight:800;color:red;background:#FFEBEE;padding:6px 12px;border-radius:20px" id="t2">03:00</span> <button class="btn btn-dark" style="width:auto;padding:6px 10px;font-size:11px" onclick="back()">← Back</button></div></div>`; if(isA)h+=`<div class="admin-box"><p style="font-weight:800">🎯 Admin - Puzzle 2</p><input id="p2_q" placeholder="Q"><input id="p2_a" placeholder="A"><button class="btn btn-gold" id="p2_add" onclick="addP2()">Add</button></div>`; p2Data.forEach((w,i)=>{h+=`<div style="background:#F8FAFF;border:2px solid #1E88E5;border-radius:10px;padding:10px;margin:8px 0"><b>${i+1}. ${w.q}</b><input id="p2_${i}" placeholder="Answer">${isA?`<button style="font-size:11px" onclick="delP2(${i})">Delete</button>`:''}</div>`;}); h+=`<button class="btn btn-gold" id="p2S" onclick="startP2()">Start</button><button class="btn btn-dark hidden" id="p2Sub" onclick="subP2()">Submit</button><div id="p2R"></div>`; document.getElementById('puzzle2').innerHTML=h;}
+function addP1(){let j=document.getElementById('p1_j').value.trim().toUpperCase(); let a=document.getElementById('p1_a').value.trim().toUpperCase(); if(!j||!a) return alert('Dono'); p1Data.push({j,a}); localStorage.setItem('p1_final',JSON.stringify(p1Data)); renderP1();}
+function delP1(i){if(!confirm('Delete?')) return; p1Data.splice(i,1); localStorage.setItem('p1_final',JSON.stringify(p1Data)); renderP1();}
+function addP2(){let q=document.getElementById('p2_q').value.trim(); let a=document.getElementById('p2_a').value.trim(); if(!q||!a) return alert('Dono'); p2Data.push({q,a}); localStorage.setItem('p2_final',JSON.stringify(p2Data)); renderP2();}
+function delP2(i){if(!confirm('Delete?')) return; p2Data.splice(i,1); localStorage.setItem('p2_final',JSON.stringify(p2Data)); renderP2();}
+function startP1(){let time1=180; document.getElementById('p1S').classList.add('hidden'); document.getElementById('p1Sub').classList.remove('hidden'); clearInterval(t1); t1=setInterval(()=>{time1--; let m=Math.floor(time1/60),s=time1%60; document.getElementById('t1').innerText=`0${m}:${s<10?'0'+s:s}`; if(time1<=0){clearInterval(t1); subP1();}},1000);}
+function subP1(){clearInterval(t1); let sc=0; p1Data.forEach((w,i)=>{let el=document.getElementById('p1_'+i); if(el&&el.value.trim().toUpperCase()==w.a) sc++;}); document.getElementById('p1R').innerHTML=`<b>Score ${sc}/${p1Data.length}</b>`; if(sc>=1) showCert('Puzzle1',`${sc}/${p1Data.length}`,'Puzzle1');}
+function startP2(){let time2=180; document.getElementById('p2S').classList.add('hidden'); document.getElementById('p2Sub').classList.remove('hidden'); clearInterval(t2); t2=setInterval(()=>{time2--; let m=Math.floor(time2/60),s=time2%60; document.getElementById('t2').innerText=`0${m}:${s<10?'0'+s:s}`; if(time2<=0){clearInterval(t2); subP2();}},1000);}
+function subP2(){clearInterval(t2); let sc=0; p2Data.forEach((w,i)=>{let el=document.getElementById('p2_'+i); if(el&&el.value.trim()==w.a) sc++;}); document.getElementById('p2R').innerHTML=`<b>Score ${sc}/${p2Data.length}</b>`; if(sc>=1) showCert('Puzzle2',`${sc}/${p2Data.length}`,'Puzzle2');}
+function showCert(h,s,g){document.getElementById('certHead').innerText=h; document.getElementById('certScore').innerText=s; document.getElementById('certGame').innerText=g; document.getElementById('certName').innerText=curUserName; document.getElementById('certDate').innerText=new Date().toLocaleDateString(); if(adminBranding.logo){document.getElementById('certLogo').src=adminBranding.logo; document.getElementById('certLogo').classList.remove('hidden');} if(adminBranding.sign){document.getElementById('certSign').src=adminBranding.sign; document.getElementById('certSign').classList.remove('hidden');} document.querySelectorAll('.section').forEach(x=>x.classList.remove('active')); document.getElementById('certBox').classList.add('active');}
+let cExp=''; function setCalc(m){['calcNormal','calcGst','calcProfit'].forEach(id=>document.getElementById(id).classList.add('hidden')); document.getElementById(m=='normal'?'calcNormal':m=='gst'?'calcGst':'calcProfit').classList.remove('hidden');}
+function cIn(v){cExp+=v; document.getElementById('calcD').innerText=cExp;} function cClear(){cExp=''; document.getElementById('calcD').innerText='0';} function cBack(){cExp=cExp.slice(0,-1); document.getElementById('calcD').innerText=cExp||'0';} function cEq(){try{let r=eval(cExp); document.getElementById('calcD').innerText=r; cExp=r.toString();}catch{document.getElementById('calcD').innerText='Error'; cExp='';}}
+function calcGST(){let a=parseFloat(document.getElementById('gstAmt').value); let r=parseFloat(document.getElementById('gstRate').value); let g=a*r/100; document.getElementById('gstR').innerText=`GST ₹${g.toFixed(2)} Total ₹${(a+g).toFixed(2)}`;}
+function calcProfit(){let cp=parseFloat(document.getElementById('cp').value); let sp=parseFloat(document.getElementById('sp').value); let p=sp-cp; document.getElementById('profitR').innerText=`P/L ₹${p.toFixed(2)}`;}
+tab('S');
+if(adminBranding.logo){document.getElementById('headerLogo').src=adminBranding.logo; document.getElementById('headerLogo').classList.remove('hidden');}
+</script>
+</body>
+</html>
